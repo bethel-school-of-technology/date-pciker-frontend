@@ -1,0 +1,73 @@
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 75vh;
+    
+
+    img {
+        margin: 20px;
+        width: 300px;
+        height: auto;
+    }
+    .form-login {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+        input {
+            margin: 7px;
+            width: 400px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 1em;
+            letter-spacing: -1px;
+            font-family: 'Josefin Sans', sans-serif;
+            border: solid lightgray 2px;
+            outline: none;
+        }
+       
+        .signup-text {
+            font-family: 'Josefin Sans', sans-serif;
+            letter-spacing: -.8px;
+            font-weight: 400;
+        }
+        button {
+           width: 416px;
+           height: 50px;
+           background: #21aae1;
+           font-family: 'Josefin Sans', sans-serif;
+           font-size: 1em;
+           letter-spacing: -1px;
+           color: white;
+           margin: 7px;
+           font-weight: 800;
+           cursor: pointer;
+        }
+        .login-button:hover {
+            transition: .3s;
+            color: #21aae1;
+            background: white;
+            border: solid #21aae1 .1px;
+        }
+}
+
+@media screen and (max-width: 800px) {
+    form {
+        img {
+            width: 150px;
+            height: auto;
+        }
+        input {
+            width: 200px;
+            height: 30px;
+        }
+        button {
+            width: 215px;
+            height: 30px;
+        }
+    }
+}

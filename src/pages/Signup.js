@@ -2,9 +2,9 @@ import React from 'react';
 
 
 const Signup = () => (
-  <div>
-    <form></form>
-  </div>
+    <form>
+      
+    </form>
 )
 
 export default Signup;
