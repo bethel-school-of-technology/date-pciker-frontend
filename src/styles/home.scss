@@ -1,5 +1,6 @@
 
     .home {
+        background-size: cover;;
         font-family: 'Lato', sans-serif;
         display: flex;
         align-items: center;
@@ -8,5 +9,19 @@
         .home-logo {
             width: 120px;
             margin: 20px 0 170px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;            
+        }
+        .homeButton {
+            display: flex;
+            justify-content: center;
+
+        button.homeButton {
+            cursor: pointer;
         }
     }
+
+    }
+      
+        

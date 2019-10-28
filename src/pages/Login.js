@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import useForm from '../components/useForm';
 import validate from '../components/validate';
 import axios from 'axios';
+import ResponsiveNav from '../components/ResponsiveNav'
+import navLinks from '../components/NavLinksArray';
 
 const Login = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate)
@@ -13,6 +15,8 @@ const Login = () => {
     axios.post('')
   }
   return (
+    <div>
+    <ResponsiveNav navLinks={navLinks} />
     <form onSubmit={handleSubmit} noValidate>
       <div className="form-logo">
         <img src={FamilyDateNight} alt="Family Logo" />
@@ -34,6 +38,7 @@ const Login = () => {
         </Link>
       </p>
     </form>
+    </div>
   );
 };
 export default Login;

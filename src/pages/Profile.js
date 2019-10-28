@@ -1,28 +1,35 @@
 import React, { useState, useEffect } from "react";
 import FamilyDateNight from "../logos/Family Date Night.png";
 import axios from "axios";
+import ResponsiveNav from "../components/ResponsiveNav";
+import navLinks from "../components/NavLinksArray";
 
 const Profile = () => {
-  const [data, setData] = useState([
-    {
-      data: []
-    }
-  ]);
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
     axios
-      .get('')
-      .then(res => setData(res.data));
-  });
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then(res => {
+        console.log(res);
+        setInfo(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   return (
-    <div className="home">
-      <img className="home-logo" src={FamilyDateNight} alt="logo" />
-      <ul>
-        {data.map(info => (
-          <li key={info.id}>{info.username}</li>
-        ))}
-      </ul>
+    <div>
+      <ResponsiveNav navLinks={navLinks} />
+      <div className="home">
+        <img className="home-logo" src={FamilyDateNight} alt="logo" />
+        <ul>
+          {info.map(post => (
+            <li key={post.id}>{post.title}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
