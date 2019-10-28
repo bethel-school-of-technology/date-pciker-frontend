@@ -1,0 +1,12 @@
+
+    .home {
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .home-logo {
+            width: 120px;
+            margin: 20px 0 170px 0;
+        }
+    }

@@ -39,7 +39,7 @@ function App () {
   return (
     <div className='App'>
       <Router>
-        <ResponsiveNav navLinks={navLinks} />
+      <ResponsiveNav navLinks={navLinks} />
         <Route exact path='/' component={Home} />
         <Route path='/login' component={Login} />
         <Route path='/profile' component={Profile} />

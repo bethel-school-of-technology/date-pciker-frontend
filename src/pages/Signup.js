@@ -3,11 +3,13 @@ import FamilyDateNight from "../logos/Family Date Night.png";
 import { Link } from "react-router-dom";
 import useForm from "../components/useForm";
 import validate from '../components/validate';
+import axios from 'axios'
 
 const Signup = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate);
     function submit() {
-      console.log("SUCCESSFUL SIGNUP")
+      console.log("SUCCESSFUL SIGNUP ")
+      axios.post('')
     }
 
   return (

@@ -12,7 +12,7 @@ const useForm = (callback, validate) => {
         const handleSubmit = event => {
           event.preventDefault();
             setErrors(validate(values))
-          callback();    
+          callback();
         }
         return {
             values,
