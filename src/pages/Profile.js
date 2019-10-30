@@ -22,8 +22,10 @@ const Profile = () => {
   return (
     <div>
       <ResponsiveNav navLinks={navLinks} />
-      <div className="home">
-        <img className="home-logo" src={FamilyDateNight} alt="logo" />
+      <div className="profile">
+        <div className="profile-logo-box">
+          <img className="profile-logo" src={FamilyDateNight} alt="logo" />
+        </div>
         <ul>
           {info.map(post => (
             <li key={post.id}>{post.title}</li>

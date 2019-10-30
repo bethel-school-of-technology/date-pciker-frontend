@@ -1,15 +1,26 @@
 import React from "react";
-import FamilyDateNight from "../logos/Family Date Night.png";
+import FamilyDateNightWhite from "../logos/Family Date Night (white).png";
 import { Link } from "react-router-dom";
+import { Player } from 'video-react';
 
 const Home = () => (
   <div className="home">
-    <div className="coverColor">
-        <img className="home-logo" src={FamilyDateNight} alt="logo" />
-        <Link to="/signup" className='homeButton'>
-          <button>Get Started</button>
-        </Link>
+    <div className="bg">
+      <div className="logo-box">
+        <img className="home-logo" src={FamilyDateNightWhite} alt="logo" />
       </div>
+      <div className="coverColor">
+        <div className="home-box">
+          <h1 className="welcome">We believe in family.</h1>
+          <h4 className="propser">and we want yours to prosper.</h4>
+          <Link to="/signup">
+            <button type="button" className="home-button">
+              Click to get started
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
   </div>
 );
 

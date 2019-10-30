@@ -1,27 +1,90 @@
 
     .home {
-        background-size: cover;;
         font-family: 'Lato', sans-serif;
         display: flex;
-        align-items: center;
         flex-direction: column;
+        
 
-        .home-logo {
-            width: 120px;
-            margin: 20px 0 170px 0;
+        .bg {
+            background: url('../images/homePagePic3.jpg') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+           
+
+            .logo-box {
+                display: flex;
+                justify-content: center;
+                .home-logo {
+                    width: 130px;
+                    margin-top: 25px;
+                }
+            }
+        }
+        .coverColor {
+            // background: rgba($color: #9CECFB, $alpha: 1.0) ;  /* fallback for old browsers */
+            // background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);  /* Chrome 10-25, Safari 5.1-6 */
+            // background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            flex-direction: column;
             display: flex;
             align-items: center;
-            justify-content: center;            
-        }
-        .homeButton {
-            display: flex;
             justify-content: center;
 
-        button.homeButton {
-            cursor: pointer;
-        }
-    }
+            .home-box {
+                max-width: 900px;
+                height: 550px;
+                display: flex;
+                padding: 50px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                flex-direction: column;
 
+
+                .welcome {
+                    font-size: 5.7em;
+                    letter-spacing: -6px;
+                    color: whitesmoke;
+                    font-weight: 800;
+                    margin: 0px;
+                    padding: 0px;
+                    text-align: center;
+                }
+                .propser {
+                    font-size: 1.8em;
+                    font-weight: 300;
+                    color: whitesmoke;
+                    letter-spacing: -1px;
+                    margin-top: 20px;
+                    text-align: center;
+                }
+                .home-button {
+                    width: 310px;
+                    height: 50px;
+                    cursor: pointer;
+                    font-family: 'Lato', sans-serif;
+                    font-size: 1.1em;
+                    background: whitesmoke;
+                    color: #21aae1;
+                    border-radius: 30px;
+                    
+                }
+                .home-button:hover {
+                    border: solid whitesmoke .5px;
+                    transition: .3s;
+                    color: whitesmoke;
+                    background: none;
+                }
+
+                
+            }
+        
+    
     }
       
-        
+}
+
+

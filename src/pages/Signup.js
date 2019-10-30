@@ -7,6 +7,7 @@ import axios from 'axios'
 import ResponsiveNav from "../components/ResponsiveNav";
 import navLinks from "../components/NavLinksArray";
 
+
 const Signup = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate);
     function submit() {
