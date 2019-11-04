@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import FamilyDateNightIcon from '../logos/Family Date Night icon.png'
 
 function ResponsiveNav ({ navLinks, background, hoverBackground, index }) {
@@ -18,15 +18,15 @@ function ResponsiveNav ({ navLinks, background, hoverBackground, index }) {
           />
         </figure>
         {navLinks.map(link => (
-          <Link to={link.path} key={link.text}
+          <NavLink to={link.path} key={link.text}
           onMouseEnter={() => setHoverIndex(index)}
           onMouseLeave={() => setHoverIndex(-1)}
           className={hoverIndex === index ? 'hoverIndex' : '' }
-          onClick={() => setNavOpen(false)}
+          onClick={() => setNavOpen(false)} exact activeStyle={{background: '#29abe2', color: 'white'}}
           >
             <li>{link.text}</li>
             <i className={link.icon}/>
-          </Link>
+          </NavLink>
         ))}
       </ul>
     </nav>

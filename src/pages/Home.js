@@ -1,7 +1,6 @@
 import React from "react";
 import FamilyDateNightWhite from "../logos/Family Date Night (white).png";
 import { Link } from "react-router-dom";
-import { Player } from 'video-react';
 
 const Home = () => (
   <div className="home">

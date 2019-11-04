@@ -4,12 +4,12 @@ import axios from "axios";
 import ResponsiveNav from "../components/ResponsiveNav";
 import navLinks from "../components/NavLinksArray";
 
-const Profile = () => {
+const Profile = ({match}) => {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts")
+      .get("http://localhost:3001/users/profile")
       .then(res => {
         console.log(res);
         setInfo(res.data);
@@ -27,8 +27,8 @@ const Profile = () => {
           <img className="profile-logo" src={FamilyDateNight} alt="logo" />
         </div>
         <ul>
-          {info.map(post => (
-            <li key={post.id}>{post.title}</li>
+          {info.map(user => (
+            <li key={user.id}>{user.title}</li>
           ))}
         </ul>
       </div>

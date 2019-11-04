@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import FamilyDateNight from "../logos/Family Date Night.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import useForm from "../components/useForm";
 import validate from '../components/validate';
 import axios from 'axios'
@@ -10,9 +10,10 @@ import navLinks from "../components/NavLinksArray";
 
 const Signup = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate);
+  // const [ login, setLogin ] = useState(false)
     function submit() {
-      console.log("SUCCESSFUL SIGNUP ")
-      axios.post('')
+      axios.post('http://localhost:3001/users/signup', values)
+      .then(console.log('YAYAYA!'))
     }
 
   return (
