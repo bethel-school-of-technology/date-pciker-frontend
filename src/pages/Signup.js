@@ -10,15 +10,27 @@ import navLinks from "../components/NavLinksArray";
 
 const Signup = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate);
-  // const [ login, setLogin ] = useState(false)
+  const [ redirect, setRedirect ] = useState(false)
     function submit() {
-      axios.post('http://localhost:3001/users/signup', values)
-      .then(console.log('YAYAYA!'))
+      axios.post('http://localhost:3001/signup', values)
+      .then(res => {
+        if (res.status === 200) {
+          setRedirect(true)  
+        } else {
+          const error = new Error(res.errors);
+          throw error;
+        }
+      })
+       .catch(err => {
+        console.error(err);
+        alert('There was an error signing up, Please try again.')
+      })
     }
 
   return (
    <div>
       <ResponsiveNav navLinks={navLinks} />
+      {redirect ? <Redirect to='/login'/> : null}
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-logo">
           <img src={FamilyDateNight} alt="Family Logo" />
@@ -27,11 +39,11 @@ const Signup = () => {
           <h3 className="signup-text">Create your account to begin</h3>
         </div>
         <div className="form-login">
-          <input value={values.firstName} onChange={handleChange} type="text" placeholder="First Name" name="firstName" required />
-          <input value={values.lastName} onChange={handleChange} type="text" placeholder="Last Name" name="lastName" required />
-          <input value={values.email} onChange={handleChange} type="email" placeholder="Email" name="email" required />
-          <input value={values.username} onChange={handleChange} type="text" placeholder="Username" name="username" />
-          <input value={values.password} onChange={handleChange} type="password" placeholder="Password" name="password" />
+          <input value={values.FirstName} onChange={handleChange} type="text" placeholder="First Name" name="FirstName" required />
+          <input value={values.LastName} onChange={handleChange} type="text" placeholder="Last Name" name="LastName" required />
+          <input value={values.Email} onChange={handleChange} type="email" placeholder="Email" name="Email" required />
+          <input value={values.Username} onChange={handleChange} type="text" placeholder="Username" name="Username" />
+          <input value={values.Password} onChange={handleChange} type="password" placeholder="Password" name="Password" />
           {errors.password && <p style={{color: '#ff0000'}}>{errors.password}</p>}
           <button type="submit" className="login-button">
             Create Account

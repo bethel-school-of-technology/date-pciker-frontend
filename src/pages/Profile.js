@@ -4,8 +4,8 @@ import axios from "axios";
 import ResponsiveNav from "../components/ResponsiveNav";
 import navLinks from "../components/NavLinksArray";
 
-const Profile = ({match}) => {
-  const [info, setInfo] = useState([]);
+const Profile = () => {
+  const [info, setInfo] = useState({ data: [] });
 
   useEffect(() => {
     axios
@@ -26,11 +26,9 @@ const Profile = ({match}) => {
         <div className="profile-logo-box">
           <img className="profile-logo" src={FamilyDateNight} alt="logo" />
         </div>
-        <ul>
-          {info.map(user => (
-            <li key={user.id}>{user.title}</li>
+          {info.data.map(user => (
+            <div key={user.FirstName}>{user.LastName}</div>
           ))}
-        </ul>
       </div>
     </div>
   );

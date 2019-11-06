@@ -16,7 +16,7 @@ const navLinks = [
     },
     {
       text: 'Profile',
-      path: '/profile',
+      path: '/users/profile',
       icon: 'ion-md-person'
     },
     // {
