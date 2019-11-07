@@ -13,7 +13,7 @@ const Login = () => {
   
   const headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'jwt'
+    // 'Authorization': 'jwt'
   }
   function submit() {
     axios.post('http://localhost:3001/login', values, headers)

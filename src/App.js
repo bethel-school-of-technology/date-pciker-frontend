@@ -14,7 +14,7 @@ function App () {
       <Router>
         <Route exact path='/' component={Home} />
         <Route path='/login' component={Login} />
-        <Route path='/users/profile' component={withAuth(Profile)} />
+        <Route path='/users/profile' component={Profile} />
         <Route path='/signup' component={Signup} />
       </Router>
     </div>
