@@ -6,34 +6,60 @@ import validate from '../components/validate';
 import axios from 'axios';
 import ResponsiveNav from '../components/ResponsiveNav'
 import navLinks from '../components/NavLinksArray';
+import withAuth from '../components/withAuth'
 
 const Login = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate)
   const [ redirect, setRedirect ] = useState(false)
-  
-  const headers = {
-    'Content-Type': 'application/json',
-    // 'Authorization': 'jwt'
-  }
+
+//   const headers = () => {
+//     const h = new Headers();
+
+//     h.append('Content-Type', 'application/json');
+
+//     const session = {
+//       Username: localStorage.getItem('Username'),
+//       token: localStorage.getItem('token')
+//     }
+//     if (session.Username && session.token) {
+//       h.append('X-Auth-Username', session.Username);
+//       h.append('X-Auth-token', session.token)
+//     }
+//     return h;
+// }
+
   function submit() {
-    axios.post('http://localhost:3001/login', values, headers)
+    fetch('http://localhost:3001/login', {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     .then(res => {
       if (res.status === 200) {
-        setRedirect(true)
+       setRedirect(true)
       } else {
-        const error = new Error(res.errors);
+        const error = new Error(res.error);
         throw error;
       }
     })
     .catch(err => {
-      console.error(err);
-      alert('Something went wrong, please try again.');
+      console.log(err);
+      alert('Please try again!')
     })
+    // axios.post('http://localhost:3001/login', values)
+    // .then(res => {
+    //   if (res.status === 200) {
+    //     console.log('IT WORKED!')
+    //     setRedirect(true)
+    //   }
+    // })
   }
   return (
     <div>
     <ResponsiveNav navLinks={navLinks} />
-    {redirect ? <Redirect to='/users/profile'/> : null}
+    {redirect ? <Redirect to='/login'/> : null}
     <form onSubmit={handleSubmit} noValidate>
       <div className="form-logo">
         <img src={FamilyDateNight} alt="Family Logo" />

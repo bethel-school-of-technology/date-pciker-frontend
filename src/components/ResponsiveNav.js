@@ -11,6 +11,7 @@ function ResponsiveNav ({ navLinks, background, hoverBackground, index }) {
       <ul style={{ background }} className={navOpen ? 'active' : ''}>
         <figure onClick={() => setNavOpen(!navOpen)}>
           <img
+            className='fam-icon'
             src={FamilyDateNightIcon}
             height='40px'
             width='auto'
@@ -22,7 +23,7 @@ function ResponsiveNav ({ navLinks, background, hoverBackground, index }) {
           onMouseEnter={() => setHoverIndex(index)}
           onMouseLeave={() => setHoverIndex(-1)}
           className={hoverIndex === index ? 'hoverIndex' : '' }
-          onClick={() => setNavOpen(false)} exact activeStyle={{background: 'gray', color: 'white'}}
+          onClick={() => setNavOpen(false)} exact activeStyle={{background: 'lightgray', color: 'white'}}
           >
             <li>{link.text}</li>
             <i className={link.icon}/>

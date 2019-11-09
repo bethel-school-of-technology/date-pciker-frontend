@@ -5,13 +5,14 @@ import ResponsiveNav from "../components/ResponsiveNav";
 import navLinks from "../components/NavLinksArray";
 
 const Profile = () => {
-  const [info, setInfo] = useState({ data: [] });
+  const [users, setUsers] = useState({data: []});
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/users/profile")
       .then(res => {
-        setInfo(res.data);
+        console.log(res.data)
+          setUsers(res.data)
       })
       .catch(err => {
         console.log(err);
@@ -25,9 +26,7 @@ const Profile = () => {
         <div className="profile-logo-box">
           <img className="profile-logo" src={FamilyDateNight} alt="logo" />
         </div>
-          {info.data.map(user => (
-            <div key={user.FirstName}>{user.LastName}</div>
-          ))}
+        <h1>Welcome! {users.FirstName}</h1>
       </div>
     </div>
   );

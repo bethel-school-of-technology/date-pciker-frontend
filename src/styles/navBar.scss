@@ -32,6 +32,10 @@ nav.responsive-nav {
         margin-inline-end: 10px;
         cursor: pointer;
         }
+        .fam-icon:hover {
+            opacity: .5;
+            transition: .3s ease all;
+        }
    
         li {
             list-style-type: none;
