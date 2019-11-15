@@ -11,12 +11,9 @@ const Login = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate)
   const [ redirect, setRedirect ] = useState(false)
   
-  const headers = {
-    'Content-Type': 'application/json',
-    // 'Authorization': 'jwt'
-  }
+  // 
   function submit() {
-    axios.post('http://localhost:3001/login', values, headers)
+    axios.post('http://localhost:3001/users/login', values)
     .then(res => {
       if (res.status === 200) {
         setRedirect(true)

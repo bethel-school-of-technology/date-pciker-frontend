@@ -4,19 +4,18 @@ import axios from "axios";
 import ResponsiveNav from "../components/ResponsiveNav";
 import navLinks from "../components/NavLinksArray";
 
-// import ImgUpload from "../components/ImgUpload";
 import CommentForm from "../components/CommentForm";
 
-// import App from "../components/commentOne.js/App";
 
 const Profile = () => {
-  const [info, setInfo] = useState({ data: [] });
+  const [users, setUsers] = useState({ data: [] })
+  
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/users/profile")
+      .get("http://localhost:3001/users/profile/" + users.UserId)
       .then(res => {
-        setInfo(res.data);
+        setUsers(res.data);
       })
       .catch(err => {
         console.log(err);
@@ -31,9 +30,7 @@ const Profile = () => {
         <div className="profile-logo-box">
           <img className="profile-logo" src={FamilyDateNight} alt="logo" />
         </div>
-          {info.data.map(user => (
-            <div key={user.FirstName}>{user.LastName}</div>
-          ))}
+            <div key={users.FirstName}>{users.LastName}</div>
           <CommentForm/>
           {/* <App/> */}
       </div>

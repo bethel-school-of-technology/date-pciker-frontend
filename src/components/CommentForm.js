@@ -37,12 +37,12 @@ class CommentForm extends Component {
 
     }
     
-    async componentDidMount() {
-        const res = await fetch(console.log(this.state));
-        // const res = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo.userId}`);
-        const posts = await res.json();
-        this.setState('');
-    };
+    // async componentDidMount() {
+    //     const res = await fetch(console.log(this.state));
+    //     // const res = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo.userId}`);
+    //     const posts = await res.json();
+    //     // this.setState('');
+    // };
 
     render() {
         return (

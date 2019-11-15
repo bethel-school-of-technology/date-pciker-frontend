@@ -12,10 +12,10 @@ const Signup = () => {
   const { values, handleChange, handleSubmit, errors } = useForm(submit, validate);
   const [ redirect, setRedirect ] = useState(false)
     function submit() {
-      axios.post('http://localhost:3001/signup', values)
+      axios.post('http://localhost:3001/users/signup', values)
       .then(res => {
         if (res.status === 200) {
-          setRedirect(true)  
+          setRedirect(true)
         } else {
           const error = new Error(res.errors);
           throw error;
