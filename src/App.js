@@ -5,7 +5,6 @@ import Home from '../src/pages/Home'
 import Profile from '../src/pages/Profile'
 import Login from '../src/pages/Login'
 import Signup from '../src/pages/Signup'
-import withAuth from './components/withAuth'
 
 
 function App () {

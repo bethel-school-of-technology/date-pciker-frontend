@@ -4,6 +4,11 @@ import axios from "axios";
 import ResponsiveNav from "../components/ResponsiveNav";
 import navLinks from "../components/NavLinksArray";
 
+// import ImgUpload from "../components/ImgUpload";
+import CommentForm from "../components/CommentForm";
+
+// import App from "../components/commentOne.js/App";
+
 const Profile = () => {
   const [info, setInfo] = useState({ data: [] });
 
@@ -28,6 +33,8 @@ const Profile = () => {
           {info.data.map(user => (
             <div key={user.FirstName}>{user.LastName}</div>
           ))}
+          <CommentForm/>
+          {/* <App/> */}
       </div>
     </div>
   );

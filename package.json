@@ -11,7 +11,9 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "reactstrap": "^8.1.1",
     "redux": "^4.0.4",
+    "simple-react-components": "^1.0.1",
     "video-react": "^0.14.1"
   },
   "scripts": {
