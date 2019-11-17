@@ -10,7 +10,7 @@ const Profile = () => {
   const { values, handleChange, handleSubmit, } =useForm(submit)
   
 function submit() {
-  axios.post('')
+  axios.post('http://localhost:3001/ideas', values)
 }
 
   useEffect(() => {
@@ -37,11 +37,11 @@ function submit() {
             <button id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Get Idea</button>
             <br/>
                 <input
-                    value={values.Idea}
+                    value={values.IdeasBody}
                     onChange={handleChange}
                     style={{ "margin-top": "90px"}}
                     type="text"
-                    name="Idea"
+                    name="IdeasBody"
                     id="commentbody"
                     placeholder="Write your idea here..."
                 />
