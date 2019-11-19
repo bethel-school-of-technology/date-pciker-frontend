@@ -8,14 +8,21 @@ import useForm from '../components/useForm'
 const Profile = () => {
   const [users, setUsers] = useState({ data: [] })
   const { values, handleChange, handleSubmit, } =useForm(submit)
+  // const [ ideas, setIdeas ] = useState({data: []})
   
 function submit() {
   axios.post('http://localhost:3001/ideas', values)
+  // .then(res => {
+  //   setIdeas(res.data)
+  // })
+  // .catch(err => {
+  //   console.log(err);
+  // })
 }
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/users/profile/1")
+      .get("http://localhost:3001/users/profile/2")
       .then(res => {
         setUsers(res.data);
       })
@@ -24,7 +31,6 @@ function submit() {
       });
   }, []);
 
-  // hey
   return (
     <div>
       <ResponsiveNav navLinks={navLinks} />
@@ -32,7 +38,10 @@ function submit() {
         <div className="profile-logo-box">
           <img className="profile-logo" src={FamilyDateNight} alt="logo" />
         </div>
-            <div key={users.FirstName}>{users.LastName}</div>
+            <h1 className="userName" key={users.UserId}> Welcome {users.FirstName}</h1>
+            <div>
+              <h3 key={users.IdeasId}>{users.IdeasBody}</h3>
+            </div>
             <form onSubmit={handleSubmit}> 
             <button id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Get Idea</button>
             <br/>
