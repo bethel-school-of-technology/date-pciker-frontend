@@ -1,25 +1,33 @@
 .profile {
-    font-family: 'Lato', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-        .profile-logo-box {
-            margin-top: 25px;
+  .profile-logo-box {
+    margin-top: 25px;
 
-            .profile-logo {
-                width: 130px;
-            }         
-            
-        // .profile-box {
-        //    max-width: 350px;
-        //    border: 1px solid; 
-        //    border-color: black;
-
-        
-            
-        }
-        
-        
+    .profile-logo {
+      width: 130px;
     }
-     
+
+    // .profile-box {
+    //    max-width: 350px;
+    //    border: 1px solid;
+    //    border-color: black;
+  }
+
+  .getIdea {
+    margin: 7px;
+    width: 400px;
+    height: 75px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 40px;
+    font-size: 2em;
+    font-family: "Lato", sans-serif;
+    border: solid lightgray 2px;
+    outline: none;
+    text-align: center;
+  }
+}
