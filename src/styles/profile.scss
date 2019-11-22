@@ -30,4 +30,22 @@
     outline: none;
     text-align: center;
   }
-}
+
+  .comBox {
+    box-shadow: 0.6px 0.8px 10px 5px rgba(221, 221, 221, 0.7);
+    height: 100%;
+    width: 300px;
+    right: 1px;
+    position: fixed;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  
+   
+   }
+  }
+

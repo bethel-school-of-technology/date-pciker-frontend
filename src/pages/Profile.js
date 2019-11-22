@@ -38,14 +38,14 @@ const Profile = () => {
         <div className="profile-logo-box">
           <img className="profile-logo" src={FamilyDateNight} alt="logo" />
         </div>
-        <h1 style={{"margin-top": "50px"}}className="userName" key={users.UserId}> Welcome {users.FirstName} {users.LastName} Patrick Murray</h1>
-        
-       
+        <h1 style={{ "margin-top": "50px" }} className="userName" key={users.UserId}> Welcome {users.FirstName} {users.LastName} Patrick Murray</h1>
+
+
 
         <form onSubmit={handleSubmit}>
-        <div>
-          <h3 className="getIdea" key={users.IdeasId}> {users.IdeasBody}"Idea Generated here"</h3>
-        </div>
+          <div>
+            <h3 className="getIdea" key={users.IdeasId}> {users.IdeasBody}"Idea Generated here"</h3>
+          </div>
           {/* <input
             className="getIdea"
             //will pull ideas from databe
@@ -56,7 +56,7 @@ const Profile = () => {
             id="commentbody"
             placeholder="Idea Generated here"
           /> */}
-          <button style={{"margin-bottom": "100px"}} id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Get Idea</button>
+          <button style={{ "margin-bottom": "100px" }} id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Get Idea</button>
 
           <input
             value={values.IdeasBody}
@@ -67,8 +67,21 @@ const Profile = () => {
             id="commentbody"
             placeholder="Write your idea here..."
           />
-          <button style={{"margin-bottom": "250px"}}id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Send Idea</button>
+          <button style={{ "margin-bottom": "250px" }} id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Send Idea</button>
         </form>
+        <div className="comBox">
+          <center>"Youre Awesome</center>
+          <hr></hr>
+          <center>"{values.Comments}Man this was so awesome!"</center>
+          <hr></hr>
+          <center>"Such a fun date. We will try this again and I am sure it will be just as fun"</center>
+          <hr></hr>
+          <button id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Post Comment</button>
+          <hr></hr>
+          <input
+            type="file"
+          />
+        </div>
       </div>
     </div>
   );
