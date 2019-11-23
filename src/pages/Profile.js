@@ -5,6 +5,8 @@ import ResponsiveNav from "../components/ResponsiveNav";
 import navLinks from "../components/NavLinksArray";
 import useForm from '../components/useForm'
 
+import FileUpload from '../components/FileUpload';
+
 const Profile = () => {
   const [users, setUsers] = useState({ data: [] })
   const { values, handleChange, handleSubmit, } = useForm(submit)
@@ -78,11 +80,10 @@ const Profile = () => {
           <hr></hr>
           <button id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Post Comment</button>
           <hr></hr>
-          <input
-            type="file"
-          />
+          <FileUpload />
         </div>
       </div>
+     
     </div>
   );
 };
