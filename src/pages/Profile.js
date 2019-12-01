@@ -13,7 +13,7 @@ const Profile = () => {
   const [ideas, setIdeas] = useState({ data: [] })
 
   function submit() {
-    axios.post('http://localhost:3001/ideas/ideasId', values)
+    axios.post('http://localhost:3001/ideas', values)
       .then(res => {
         setIdeas(res.data)
       })
@@ -24,7 +24,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/users/profile/:id")
+      .get("http://localhost:3001/users/profile/1")
       .then(res => {
         setUsers(res.data);
       })
@@ -34,8 +34,9 @@ const Profile = () => {
   }, []);
 
   useEffect(() => {
+    console.log(values)
     axios
-      .get("http://localhost:3001/ideas/IdeasId/2")
+      .get("http://localhost:3001/ideas/")
       .then(res => {
         setIdeas(res.data);
       })
@@ -57,7 +58,7 @@ const Profile = () => {
 
         <form onSubmit={handleSubmit}>
           <div>
-            <h3 className="getIdea" key={ideas.IdeasId}> {ideas.IdeasBody}"Idea Generated here"</h3>
+            <h3 className="getIdea" key={ideas.IdeasId}> {ideas.IdeasTitle}</h3>
           </div>
           {/* <input
             className="getIdea"
@@ -69,14 +70,14 @@ const Profile = () => {
             id="commentbody"
             placeholder="Idea Generated here"
           /> */}
-          <button style={{ "margin-bottom": "100px" }} id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Get Idea</button>
+          {/* <button style={{ "margin-bottom": "100px" }} id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Get Idea</button> */}
 
           <input
-            value={ideas.IdeasBody}
+            value={ideas.IdeasTitle}
             onChange={handleChange}
             // style={{ "margin-top": "90px" }}
             type="text"
-            name="IdeasBody"
+            name="IdeasTitle"
             id="commentbody"
             placeholder="Write your idea here..."
           />
