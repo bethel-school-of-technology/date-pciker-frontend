@@ -36,7 +36,7 @@ const Profile = () => {
   useEffect(() => {
     console.log(values)
     axios
-      .get("http://localhost:3001/ideas/")
+      .get("http://localhost:3001/ideas/1")
       .then(res => {
         setIdeas(res.data);
       })
